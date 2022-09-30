@@ -1,5 +1,5 @@
 # Windows_Rjml 
-This is Rjml windows version   
+This is Rjml windows version.   
 Rjml is a program that implements the JML software function (detecting hybridization sequences) in R language.   
 RJml can use multiple threads to increase its speed compared to JML.  
 ## 1. Package summary
@@ -27,10 +27,10 @@ The uncompressed folder contains all the necessary files for Rjml installation a
 (4) A example dataset include three files：jml.tpi.ctl rosa.species.trees tpi.phy.  
 After decompressing Rjml-windows.rar file, no specific installation was required.  
 Users can double click the batch file winRjml.bat or open CMD terminal and type the calculation command as below to finish the installation and analyses automatically (users should make sure all the uncompressed files in the same directory by decompressing Rjml-windows.rar files).
-##3.Windows usage of Rjml  
+## 3.Usage of Rjml on Windows system
 We demonstrate Rjml execution on a Windows system using the example data provided by JML. 
 This dataset includes three files: rosa. species. trees, tpi. phy and jml. tpi. ctl.   
-The rosa.species.trees file contains a posterior distribution of 1000 species trees (with divergence times and population sizes) of 8 species of Rosa genus  
+The rosa.species.trees file contains a posterior distribution of 1000 species trees (with divergence times and population sizes) of 8 species of Rosa genus.   
 The tpi. phy file contains 92 sequences of the 8 species of Rosa genus (810 bp in length).  
 The jml.tpi.ctl file is a control file that provides necessary information for DNA sequence simulation.  
 More information about the creation and formatting of the control file, please refer to the usage document of JML (https://github.com/simjoly/jml).  
@@ -38,6 +38,24 @@ In fact, Rjml runs in two steps.
 The first step requires generating the simulation sequence using jml-sim software.  
 After generating the simulation sequence, users are expected to use Rjml.R calculate the posterior predictive distributions for the uncorrected minimum distance between sequences for all pair of species.   
 However, in our Windows implementation of Rjml, we provide batch scripts for helping users to implement all the simulations and calculations simultaneously with a single command line.  
-Users should open the CMD or PowerShell program, enter the folder where the Rjml-windows.rar are unzipped.  
+First, users should open the CMD or PowerShell program, enter the folder where the Rjml-windows.rar are unzipped.  
 Then, for using Rosa example as a demonstration, one can type the following command:  
-~$winRjml jml.tpi.ctl rosa.species.trees tpi.phy 0.1 8~
+`winRjml jml.tpi.ctl rosa.species.trees tpi.phy 0.1 8`    
+Alternatively, users can simply double click winRjml.bat file to type the above command for implementing Rosa example.
+The three files used in here was the: jml-sim control file, the posterior species tree file, the original sequence file.  
+The last two numbers represent the P-value and thread number for parallel computation.  
+It is noted here, Rscript.exe is recommended to be listed in environment variable when it was used. To do so, users should find the path to R.exe or Rscript.exe on their own computers and add the path into the environmental variables.  
+## 4. Output files
+During the calculation, users may observe that some intermediate output files have been generated, that is, the generated simulation sequences of jml-sim with the file name prefixed with “RepSeqs” followed by a number. It also produces procedural files called out.trees and rep.dat, which are repeatedly written and read during the simulation. User should not remove them while the program is running, and all of "RepSeqs” files will be removed automatically when all the required simulation and calculation are done.  
+Rjml produces three result files:  
+Distributions_Rjml.csv, Probabilities_Rjml.csv and Results_Rjml.csv.  
+They correspond to the three files in the original JML software: Distributions.txt, Probabilities.txt and Results.txt.  
+Distributions_Rjml.csv file contains the posterior predictive distributions, which can be used to calculate the P-value of hybridization hypotheses.  
+The Probabilities_Rjml.csv file contains the probability of observing the minimum distance between all pair of species according to a scenario without hybridization.  
+The Results_Rjml.csv contains all the pairwise sequence distances that have a P-value smaller than the significance level specified in the control file. Note that if the file is empty or unavailable, this means that no hybridization events were found with a P-value below the threshold.
+## 5. References
+Drummond, A. J., & Rambaut, A. (2007). BEAST: Bayesian evolutionary analysis by sampling trees. BMC evolutionary biology, 7(1), 1-8.  
+Flouri, T., Jiao, X., Rannala, B., & Yang, Z. (2018). Species tree inference with BPP using genomic sequences and the multispecies coalescent. Molecular biology and evolution, 35(10), 2585-2593.  
+Joly, S. (2012). JML: testing hybridization from species trees. Molecular Ecology Resources, 12(1), 179-184.  
+Rannala, B., & Yang, Z. (2003). Bayes estimation of species divergence times and ancestral population sizes using DNA sequences from multiple loci. Genetics, 164(4), 1645-1656.  
+Rambaut, A., & Grass, N. C. (1997). Seq-Gen: an application for the Monte Carlo simulation of DNA sequence evolution along phylogenetic trees. Bioinformatics, 13(3), 235-238.  
