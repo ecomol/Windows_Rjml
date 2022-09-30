@@ -6,7 +6,7 @@ RJml can use multiple threads to increase its speed compared to JML.
 JML program uses posterior predictive checking to test whether the minimum distance between sequences of two species is smaller than expected under a scenario that does not account for hybridization.
 If the observed distance is smaller than, the simulated valued, then we can conclude that lineage sorting cannot explain the data and a hypothesis of hybridization can be accepted (Joly 2012).
 In order to implement the above procedure, the program needs to perform the following steps:  
-(1) Posterior distributions of species trees, population sizes, and divergence times generated from other software such as BEAST and BPP.  
+(1) Posterior distributions of species trees, population sizes, and divergence times generated from other software such as BEAST and BPP(Drummond & Rambaut et al., 2007; Flouri et al., 2018).  
 (2) JML samples each species tree to simulate gene trees through MCMCCOAL (Rannala & Yang, 2003).  
 (3) Sequences are then simulated on the gene tree. This was implemented by adapting the code of the software SEQ-GEN (Rambaut & Grassly 1997).   
 (4) JML estimates the minimum distance between sequences for all pairs of species.  
