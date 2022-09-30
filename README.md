@@ -40,4 +40,4 @@ After generating the simulation sequence, users are expected to use Rjml.R calcu
 However, in our Windows implementation of Rjml, we provide batch scripts for helping users to implement all the simulations and calculations simultaneously with a single command line.  
 Users should open the CMD or PowerShell program, enter the folder where the Rjml-windows.rar are unzipped.  
 Then, for using Rosa example as a demonstration, one can type the following command:  
-                    $winRjml jml.tpi.ctl rosa.species.trees tpi.phy 0.1 8
+~$winRjml jml.tpi.ctl rosa.species.trees tpi.phy 0.1 8~
