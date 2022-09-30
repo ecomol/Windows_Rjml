@@ -1,0 +1,9 @@
+species =       bla nit fol pal pis gym set mul
+seqperspecies = 44     8      6         12        8         10         2        2
+locusrate = 0.8762
+heredityscalar = 1
+seqgencommand = -mHKY -l810
+significancelevel = 0.1
+burnin = 800
+thinning = 1
+seed = 10000
