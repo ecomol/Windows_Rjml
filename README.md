@@ -21,7 +21,7 @@ The uncompressed folder contains all the necessary files for **Rjml** installati
 (1) batch script file: **winRjml.bat**  
 (2) Pre-compiled Windows executable file :**jml-sim.exe**, **libgcc_s_seh-1.dll** and **libstdc++-6.dll**  
 (3) R packages argparser, foreach, doparallel, iterators, Rcpp, RcppArmadillo and Cjml1.  
-(4) A example dataset include three files：**jml.tpi.ctl** **rosa.species.trees** **tpi.phy**. 
+(4) A example dataset include three files：**jml.tpi.ctl** **rosa.species.trees** **tpi.phy**.  
 (5) **Rjml.R**: R code that performs the fourth step of **JML** analysis.  
 After decompressing **Rjml-windows.rar** file, no specific installation was required.  
 Users can double click the batch file **winRjml.bat** or open CMD terminal and type the calculation command as below to finish the installation and analyses automatically (users should make sure all the uncompressed files in the same directory by decompressing **Rjml-windows.rar** files).
