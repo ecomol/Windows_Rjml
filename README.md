@@ -4,7 +4,7 @@ This is **Rjml** windows version.
 **Rjml** can use multiple threads to increase its speed compared to **JML**.  
 ## 1. Package summary
 **JML** program uses posterior predictive checking to test whether the minimum distance between sequences of two species is smaller than expected under a scenario that does not account for hybridization.
-If the observed distance is smaller than, the simulated valued, then we can conclude that lineage sorting cannot explain the data and a hypothesis of hybridization can be accepted (Joly 2012).
+If the observed distance is smaller than, the simulated valued, then we can conclude that lineage sorting cannot explain the data and a hypothesis of hybridization can be accepted (Joly 2012).  
 In order to implement the above procedure, the program needs to perform the following steps:  
 (1) Posterior distributions of species trees, population sizes, and divergence times generated from other software such as BEAST and BPP(Drummond & Rambaut et al., 2007; Flouri et al., 2018).  
 (2) **JML** samples each species tree to simulate gene trees through MCMCCOAL (Rannala & Yang, 2003).  
@@ -21,7 +21,8 @@ The uncompressed folder contains all the necessary files for **Rjml** installati
 (1) batch script file: **winRjml.bat**  
 (2) Pre-compiled Windows executable file :**jml-sim.exe**, **libgcc_s_seh-1.dll** and **libstdc++-6.dll**  
 (3) R packages argparser, foreach, doparallel, iterators, Rcpp, RcppArmadillo and Cjml1.  
-(4) A example dataset include three files：**jml.tpi.ctl** **rosa.species.trees** **tpi.phy**.  
+(4) A example dataset include three files：**jml.tpi.ctl** **rosa.species.trees** **tpi.phy**. 
+(5) **Rjml.R**: R code that performs the fourth step of **JML** analysis.  
 After decompressing **Rjml-windows.rar** file, no specific installation was required.  
 Users can double click the batch file **winRjml.bat** or open CMD terminal and type the calculation command as below to finish the installation and analyses automatically (users should make sure all the uncompressed files in the same directory by decompressing **Rjml-windows.rar** files).
 ## 3.Usage of **Rjml** on Windows system
