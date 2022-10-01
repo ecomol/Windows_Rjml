@@ -1,7 +1,7 @@
 # Windows_Rjml 
 This is **Rjml** windows version.   
 **Rjml** is a program that implements the **JML** software function (detecting hybridization sequences) in R language.   
-**Rjml** can use multiple threads to increase its speed compared to **JML**.  
+**Rjml** uses the strategy of R/C++ integration, array programming and multiple threads to increase its speed compared to **JML**. The computational speed can be two to five folds faster than **JML**, thus being capable to handle large data sets.
 ## 1. Package summary
 **JML** program uses posterior predictive checking to test whether the minimum distance between sequences of two species is smaller than expected under a scenario that does not account for hybridization.
 If the observed distance is smaller than, the simulated valued, then we can conclude that lineage sorting cannot explain the data and a hypothesis of hybridization can be accepted (Joly 2012).  
